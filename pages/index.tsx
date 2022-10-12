@@ -5,7 +5,7 @@ import { CarDetailsActionBar } from '../components/CarDetailsActionBar';
 import { ProductCarousel } from '../components/ProductCarousel';
 import { FilterBar } from '../components/FilterBar';
 import { getCars } from '../helpers/api';
-import { LoadingBar } from 'vcc-ui';
+import { LoadingBar, View } from 'vcc-ui';
 
 const Index = () => {
     const { data, error } = getCars();
@@ -31,7 +31,9 @@ const Index = () => {
     return (
         <>
             <FilterBar items={bodyTypes} onFilterChange={setActiveFilter}></FilterBar>
-            <ProductCarousel items={sliderItems} />
+            <View extend={{ padding: 24 }}>
+                <ProductCarousel items={sliderItems} />
+            </View>
         </>
     )
 };
